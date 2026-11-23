@@ -49,11 +49,11 @@ static GF_LOG: &[u8] = &[
 ];
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let count = std::env::args()
+    let num = std::env::args()
         .nth(1)
         .ok_or("Missing required positive integer argument")?
         .parse::<usize>()?;
-    println!("{generator:?}");
+    println!("{:?}", create_generator(num)?);
 
     Ok(())
 }
