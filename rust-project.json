@@ -1,0 +1,16 @@
+{
+  "sysroot": "C:/Users/pwood/.rustup/toolchains/stable-x86_64-pc-windows-gnu",
+  "sysroot_src": "C:/Users/pwood/.rustup/toolchains/stable-x86_64-pc-windows-gnu/lib/rustlib/src/rust/library",
+  "crates": [
+    {
+      "root_module": "reed-solomon.rs",
+      "edition": "2024",
+      "deps": []
+    },
+    {
+      "root_module": "generator-polynomial.rs",
+      "edition": "2024",
+      "deps": []
+    }
+  ]
+}
