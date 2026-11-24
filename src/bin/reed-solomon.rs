@@ -49,7 +49,10 @@ static GF_LOG: &[u8] = &[
     214, 244, 234, 168, 80, 88, 175,
 ];
 
-fn reed_solomon(data: &[u8], generator: &[u8]) -> Result<Vec<u8>, Box<dyn std::error::Error>> {
+fn create_ec_codewords(
+    data: &[u8],
+    generator: &[u8],
+) -> Result<Vec<u8>, Box<dyn std::error::Error>> {
     let target_len = data.len() + generator.len() - 1;
     let mut out: Vec<u8> = Vec::with_capacity(target_len);
     out.extend_from_slice(data);
@@ -78,7 +81,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         0x11,
     ];
 
-    println!("{:?}", reed_solomon(&data, &generator)?);
+    println!("{:?}", create_ec_codewords(&data, &generator)?);
 
     Ok(())
 }
